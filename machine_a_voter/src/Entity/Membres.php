@@ -3,22 +3,22 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\MembreRepository;
+use App\Repository\MembresRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: MembreRepository::class)]
+#[ORM\Entity(repositoryClass: MembresRepository::class)]
 #[ApiResource]
-class Membre
+class Membres
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 50, nullable: true)]
     private ?string $nomMembre = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 50 , nullable: true)]
     private ?string $prenomMembre = null;
 
     public function getId(): ?int
@@ -31,7 +31,7 @@ class Membre
         return $this->nomMembre;
     }
 
-    public function setNomMembre(string $nomMembre): static
+    public function setNomMembre(?string $nomMembre): static
     {
         $this->nomMembre = $nomMembre;
 
