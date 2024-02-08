@@ -13,7 +13,7 @@ const app = {
     data() {
         return {
             candidats : [],
-            picture : ''
+            picture : []
            
         }
     },
@@ -24,9 +24,10 @@ const app = {
             this.candidats.push(candidat);
         }
         console.log(this.candidats);
-     const arrayCandidat = [...this.candidats];
+        const arrayCandidat = [...this.candidats];
+        
 
-     console.log(arrayCandidat);
+     console.log(this.picture);
     },
     computed: {
         getNbCandidats(){
@@ -34,7 +35,7 @@ const app = {
         }
     },
     methods: {
-        
+
     }
 }
 
