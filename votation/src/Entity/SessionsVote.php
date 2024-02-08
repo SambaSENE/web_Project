@@ -31,6 +31,9 @@ class SessionsVote
     #[ORM\Column(length: 10)]
     private ?string $status = null;
 
+    #[ORM\ManyToOne(inversedBy: 'session')]
+    private ?SessionsCandidat $sessionsCandidat = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +71,18 @@ class SessionsVote
     public function setStatus(string $status): static
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getSessionsCandidat(): ?SessionsCandidat
+    {
+        return $this->sessionsCandidat;
+    }
+
+    public function setSessionsCandidat(?SessionsCandidat $sessionsCandidat): static
+    {
+        $this->sessionsCandidat = $sessionsCandidat;
 
         return $this;
     }

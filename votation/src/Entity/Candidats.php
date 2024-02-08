@@ -6,6 +6,8 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Get;
 use App\Repository\CandidatsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CandidatsRepository::class)]
@@ -30,6 +32,14 @@ class Candidats
 
     #[ORM\Column(length: 255)]
     private ?string $slogan = null;
+
+    #[ORM\OneToMany(targetEntity: SessionsCandidat::class, mappedBy: 'candidat')]
+    private Collection $sessionsCandidats;
+
+    public function __construct()
+    {
+        $this->sessionsCandidats = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -68,6 +78,36 @@ class Candidats
     public function setSlogan(string $slogan): static
     {
         $this->slogan = $slogan;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, SessionsCandidat>
+     */
+    public function getSessionsCandidats(): Collection
+    {
+        return $this->sessionsCandidats;
+    }
+
+    public function addSessionsCandidat(SessionsCandidat $sessionsCandidat): static
+    {
+        if (!$this->sessionsCandidats->contains($sessionsCandidat)) {
+            $this->sessionsCandidats->add($sessionsCandidat);
+            $sessionsCandidat->setCandidat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSessionsCandidat(SessionsCandidat $sessionsCandidat): static
+    {
+        if ($this->sessionsCandidats->removeElement($sessionsCandidat)) {
+            // set the owning side to null (unless already changed)
+            if ($sessionsCandidat->getCandidat() === $this) {
+                $sessionsCandidat->setCandidat(null);
+            }
+        }
 
         return $this;
     }
