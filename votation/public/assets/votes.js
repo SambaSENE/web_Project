@@ -24,18 +24,22 @@ const app = {
             this.candidats.push(candidat);
         }
         console.log(this.candidats);
-        const arrayCandidat = [...this.candidats];
+        // const arrayCandidat = [...this.candidats];
         
 
      console.log(this.picture);
     },
     computed: {
-        getNbCandidats(){
+        getNbCandidats()
+        {
             return this.candidats.length;
         }
     },
     methods: {
-
+        getPic()
+        {
+            
+        }
     }
 }
 

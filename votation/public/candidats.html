@@ -21,13 +21,10 @@
         <h1 class="center">Élections des représentants</h1>
         <p class="center">{{ getNbCandidats }} candidats</p>
 
-        <article >
+        <article class="allCandidats">
             <div class="identity" v-for="candidat of candidats">
-                <h3>{{ candidat.nom }} {{ candidat.prenom }}</h3>
-                <p>{{ candidat.id }}</p>
-                <div class="picture">
-                    
-                </div>
+                <img :src="candidat.photo" alt="photo du candidat" >
+                <h2>{{ candidat.nom }} {{ candidat.prenom }}</h2>
             </div>
 
         </article>
