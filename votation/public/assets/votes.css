@@ -17,6 +17,7 @@ main {
     width: 100rem;
     max-width: 100%;
     margin: 1rem auto;
+    background-color: #dfe4ea;
 }
 
 footer {
@@ -32,13 +33,14 @@ footer {
     margin: 0;
     padding: 0;
 }
-.allCandidats{
-    border: 1px solid red;
+.allCandidats {
+    /* border: 1px solid red; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    gap: 5px;
+    gap: 9px;
+    padding: 14px;
 }
 .allCandidats .identity {
     width: 18%;
@@ -56,10 +58,10 @@ footer {
     
 }
 .allCandidats .identity img:hover{
-   
-    transform: scale(1);
-    transform: rotateY(180deg);
-
+    transform: rotate(0.5turn);
+    transform: rotateY(180deg );
+    border: 1.8px solid green;
+    cursor: pointer;
 }
 .identity h2 {
     position: absolute;
@@ -103,4 +105,19 @@ footer {
 
 .voter:hover {
     background-color: #00CC00CC;
+}
+.miniature {
+    width: 80px;
+    padding: 10px;
+}
+#listCandidats{
+    width: 100%;
+    position: relative;
+}
+.listCandidats{
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 20%;
+    right: 20%;
 }
