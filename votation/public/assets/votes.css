@@ -12,7 +12,9 @@ body {
     font-size:1.6rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+a{ text-decoration: none;
 
+}
 main {
     width: 100rem;
     max-width: 100%;
@@ -101,6 +103,7 @@ footer {
     padding: 1rem;
     cursor: pointer;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .voter:hover {
@@ -120,4 +123,16 @@ footer {
     top: 15px;
     left: 20%;
     right: 20%;
+}
+
+.listCandidats table {
+    background-color: #dfe4ea;
+    width: 700px;
+}
+th {
+    margin: 10px;
+}
+
+.cacher {
+    display: none;
 }

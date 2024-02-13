@@ -22,16 +22,7 @@
     <main id="app">
         <h1 class="center">Élections des représentants</h1>
         <p class="center">{{ getNbCandidats }} candidats</p>
-
-        <article class="allCandidats">
-            <div class="identity" v-for="candidat of candidats">
-                <img :src="candidat.photo" alt="photo du candidat">
-                <h2>{{ candidat.nom }} {{ candidat.prenom }}</h2>
-            </div>
-
-        </article>
-        <button type="button" class="voter" @click="handler">Je vote !</button>
-        <section id="listCandidats" >
+        <section id="listCandidats">
             <article class="listCandidats">
 
                 <h1>Elections des 3 représentants du conseil</h1>
@@ -50,9 +41,11 @@
                             <td>{{ candidat.nom }}</td>
                             <td>{{ candidat.prenom }}</td>
                             <td>{{ candidat.slogan }}</td>
-                            <td>
-                                <a href="#">Oui</a>
-                                <a href="#">Non</a>
+                            <td :id ="candidat.id">
+                                
+                                    <button :data-id= "candidat.id" @click="clickButton">Oui</button>
+                                    <button  :data-id= "candidat.id" @click="clickButton">Non</button>
+                                
                             </td>
                         </tr>
                     </tbody>
@@ -60,11 +53,11 @@
                 </table>
             </article>
         </section>
-        
+
     </main>
-    <!-- <footer>
+    <footer>
         <p>Copyright 2024 DWWM2304</p>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

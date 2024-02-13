@@ -21,21 +21,20 @@
     </header>
     <main id="app">
         <h1 class="center">Élections des représentants</h1>
-        <!-- <p class="center">{{ getNbCandidats }} candidats</p> -->
+        <p class="center">{{ getNbCandidats }} candidats</p>
 
         <article class="allCandidats">
-            <!-- <div class="identity" v-for="candidat of candidats">
+            <div class="identity" v-for="candidat of candidats">
                 <img :src="candidat.photo" alt="photo du candidat">
                 <h2>{{ candidat.nom }} {{ candidat.prenom }}</h2>
-            </div> -->
+            </div>
 
         </article>
-        <button type="button" class="voter" @click="afficherCandidats">Je vote !</button>
+        <a href="./listesVotants.html" class="voter">Je vote</a>
+        
         
     </main>
-    <footer>
-        <p>Copyright 2024 DWWM2304</p>
-    </footer>
+    
 </body>
 
 </html>

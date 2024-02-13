@@ -2,7 +2,7 @@
 /**
  * Machine à  voter
  */
-
+import { VotationRepositoty } from "./votationRepository.js";
 import { FetchApi } from "./FetchApi.js";
 import { Candidat } from "./Candidat.js";
 
@@ -13,19 +13,21 @@ const app = {
     data() {
         return {
             candidats: [],
-            arrayCandidat: []
+            arrayCandidat: [],
+            votes: []
 
         }
     },
     async mounted() {
         const data = await FetchApi.fetchApi(APIUrl);
+
         for (const c of data) {
             const candidat = new Candidat(c);
             this.candidats.push(candidat);
         }
         this.arrayCandidat = [...this.candidats];
 
-console.log(this.candidats);
+        this.arrayCandidats = this.candidats.sort((a, b) => Math.random() - 0.4);
     },
     computed: {
         getNbCandidats() {
@@ -33,8 +35,16 @@ console.log(this.candidats);
         }
     },
     methods: {
-        afficherCandidats() {
-            //  document.location('./liste-votant.html');
+        clickButton(event) {
+            let idCandidat = event.target.dataset.id;
+            let ouiNon = event.target.textContent;
+
+            document.getElementById(idCandidat).classList.add('cacher');
+
+           if(ouiNon == 'oui'){
+            this.votes.push(ouiNon);
+           }
+
         }
     }
 }
