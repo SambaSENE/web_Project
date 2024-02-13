@@ -1,7 +1,8 @@
 class FetchApi
 {
-    static async FetchApi(_url){
-        let response = await fetch(_url);
+    static async fetchApi(path , option = {}){
+        
+        let response = await fetch(path ,  option);
         let json = response.json();
         return json;
     }

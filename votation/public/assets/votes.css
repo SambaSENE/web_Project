@@ -12,11 +12,14 @@ body {
     font-size:1.6rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+a{ text-decoration: none;
 
+}
 main {
     width: 100rem;
     max-width: 100%;
     margin: 1rem auto;
+    background-color: #dfe4ea;
 }
 
 footer {
@@ -32,7 +35,48 @@ footer {
     margin: 0;
     padding: 0;
 }
-
+.allCandidats {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    gap: 9px;
+    padding: 14px;
+}
+.allCandidats .identity {
+    width: 18%;
+    position: relative;
+    text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.allCandidats .identity img{
+    width: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transition: all .5s ease-in-out;
+    
+}
+.allCandidats .identity img:hover{
+    transform: rotate(0.5turn);
+    transform: rotateY(180deg );
+    border: 1.8px solid green;
+    cursor: pointer;
+}
+.identity h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #FFFFFF33;
+    opacity: 0;
+}
+.identity h4:hover{
+    display: inline;
+    opacity: 1;
+    text-align: center;
+}
 .menu a {
     display: block;
     margin: 0 1rem;
@@ -59,8 +103,36 @@ footer {
     padding: 1rem;
     cursor: pointer;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .voter:hover {
     background-color: #00CC00CC;
+}
+.miniature {
+    width: 80px;
+    padding: 10px;
+}
+#listCandidats{
+    width: 100%;
+    position: relative;
+}
+.listCandidats{
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 20%;
+    right: 20%;
+}
+
+.listCandidats table {
+    background-color: #dfe4ea;
+    width: 700px;
+}
+th {
+    margin: 10px;
+}
+
+.cacher {
+    display: none;
 }
