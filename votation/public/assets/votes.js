@@ -19,15 +19,17 @@ const app = {
         }
     },
     async mounted() {
-        const data = await FetchApi.fetchApi(APIUrl);
+        // const data = await FetchApi.fetchApi(APIUrl);
 
-        for (const c of data) {
-            const candidat = new Candidat(c);
-            this.candidats.push(candidat);
-        }
-        this.arrayCandidat = [...this.candidats];
+        // for (const c of data) {
+        //     const candidat = new Candidat(c);
+        //     this.candidats.push(candidat);
+        // }
+        // this.arrayCandidat = [...this.candidats];
 
-        this.arrayCandidats = this.candidats.sort((a, b) => Math.random() - 0.4);
+        // this.arrayCandidats = this.candidats.sort((a, b) => Math.random() - 0.4);
+        const candidat = await VotationRepositoty.getAllCandidat();
+        console.log(candidat);
     },
     computed: {
         getNbCandidats() {
