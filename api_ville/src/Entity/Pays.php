@@ -17,11 +17,11 @@ class Pays
     private ?int $id = null;
 
     #[ORM\Column(length: 2)]
-    #[SerializedName('country_code')]
+    #[SerializedName('codePays')]
     private ?string $code_pays = null;
     
     #[ORM\Column(length: 255)]
-    #[SerializedName('country_name')]
+    #[SerializedName('nomPays')]
     private ?string $nom_pays = null;
 
     public function getId(): ?int

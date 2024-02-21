@@ -3,13 +3,42 @@ import { Ville } from "./Ville.js";
 
 class ReposPays
 {
-    static BaseUrl = 'http://localhost:3000/api';
+    static BaseUrl = 'http://localhost/api';
+
     static async getCoyntrys(){
     
-        let response =  await  fetch(ReposPays.BaseUrl + '/payss');
-        let json = response
+        let url = ReposPays.BaseUrl + '/payss/';
+        
+        let response =  await  fetch(url);
+        
+        let json = await response.json();
+        
+       
+       
+        return json;
+    }
 
-    
+    static async getVille(){
+        
+        let url = ReposPays.BaseUrl + '/villes/';
+
+        let response = await fetch(url);
+        
+        let json = await response.json();
+
+        let ville =  new Ville(json);
+        
+        return ville;
+    }
+
+    static async getOneVille(_id){
+        let url = ReposPays.BaseUrl + '/villes/' + _id
+        
+        let response =  await fetch(url);
+
+        let json = await response.json();
+
+        return json;
     }
 }
 export { ReposPays }

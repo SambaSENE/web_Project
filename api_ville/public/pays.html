@@ -1,36 +1,78 @@
 <!DOCTYPE html>
 <html lang="FR-FR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js" type="module"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Liste de pays</title>
 </head>
+
 <body>
-    <header></header>
-    <main>
+    <header>
+        <img src="./assets/img/banner.png" alt="" srcset="">
+    </header>
+    <main id="app">
         <h1>Pays</h1>
+
         <table>
             <thead>
                 <tr>
-                    <th></th>
+                    <th>Drapeau</th>
                     <th>CODE</th>
                     <th>NOM</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+                <tr v-for="pays of listPays">
+                    <!-- <td>{{ pays.id }}</td> -->
+                    <td><img :src="'https://flagsapi.com/' + pays.codePays + '/flat/32.png'"></td>
+                    <td>{{ pays.codePays }}</td>
+                    <td>{{ pays.nomPays }}</td>
+                    <td>
+                        <button @click="openDetails" type="button" :data-id="pays.id">Détails</button>
+
+                    </td>
+
                 </tr>
             </tbody>
         </table>
+
+        <div id="modal" ref="modal">
+
+            <article v-if="monPays != null ">
+                <button class="btn" type="button" @click="closeDetails">Fermer</button>
+                <article>
+                    <h2>{{ monPays.nomPays }}</h2>
+                    <img :src="'https://flagsapi.com/' + monPays.codePays + '/flat/64.png'">
+                    <p> Code ISO <span class="codePays">{{ monPays.codePays }}</span></p>
+
+
+                </article>
+                <form>
+                    <fieldset>
+                        <label for="add_ville">Ajouter une ville</label>
+                        <input type="text" name="add_ville" id="add_ville" >
+
+                        <button type="button">Ajouter</button>
+                    </fieldset>
+                </form>
+                <ul>
+                  
+                </ul>
+            </article>
+
+        </div>
+
     </main>
+    <footer>
+
+    </footer>
 </body>
+
 </html>
