@@ -70,18 +70,18 @@ table tbody tr td button:hover {
 
 #modal article {
     background-color: var(--font-color1);
-    width: 800px;
+    width: 550px;
     padding: 5px;
     margin: 325px auto;
     background-color: #006500;
 }
-#modal article button {
+#modal .btn {
     width: 100%;
     background-color: var(--close_btn);
     color: var(--font-color1);
     border: none;
 }
-#modal article button:hover{
+#modal .btn:hover{
     background-color: var(--font-color1);
     color: var(--close_btn);
 }
@@ -103,4 +103,41 @@ table tbody tr td button:hover {
 
 .codePays {
     font-weight: bold;
+}
+#modal form {
+    
+}
+#modal form label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: 700;
+    padding: 10px;
+    color: var(--font-color2);
+
+}
+
+#modal form input {
+    border-style: none;
+    border: 1px solid var(--font-color1);
+    background-color: var(--bg_color);
+    padding: 0 10px;
+    color: var(--font-color2);
+    height: 40px;
+}
+
+#modal form button {
+    width: 100px;
+    height: 40px;
+    background-color: var(--bg_color);
+    border: 1px solid var(--bs-body-bg);
+    color: var(--bs-body-bg);
+}
+#modal form button:hover {
+    background-color: var(--close_btn);
+    color: var(--font-color1);
+    border: 1px solid var(--close_btn);
+    
+}
+#modal ul {
+    margin: 5px;
 }

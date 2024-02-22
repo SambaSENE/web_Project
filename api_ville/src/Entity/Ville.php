@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\VilleRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\SerializedName;
 
 #[ORM\Entity(repositoryClass: VilleRepository::class)]
 #[ApiResource ]
@@ -18,13 +19,15 @@ class Ville
     private ?int $id = null;
 
     #[ORM\Column(length: 8)]
+    #[SerializedName('codePostal')]
     private ?string $code_postal_Ville = null;
-
+    
     #[ORM\Column(length: 255)]
+    #[SerializedName('nomVille')]
     private ?string $nom_ville = null;
 
     #[ORM\ManyToOne]
-   
+    #[SerializedName('idPays')]
     private ?Pays $id_pays = null;
 
     public function getId(): ?int

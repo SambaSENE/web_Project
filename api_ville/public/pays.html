@@ -46,24 +46,21 @@
         <div id="modal" ref="modal">
 
             <article v-if="monPays != null ">
-                <button class="btn" type="button" @click="closeDetails">Fermer</button>
+                <button class="btn close" type="button" @click="closeDetails">Fermer</button>
                 <article>
                     <h2>{{ monPays.nomPays }}</h2>
                     <img :src="'https://flagsapi.com/' + monPays.codePays + '/flat/64.png'">
                     <p> Code ISO <span class="codePays">{{ monPays.codePays }}</span></p>
-
-
                 </article>
                 <form>
                     <fieldset>
-                        <label for="add_ville">Ajouter une ville</label>
-                        <input type="text" name="add_ville" id="add_ville" >
-
+                        <label for="add_ville"> Ajouter une ville : </label>
+                        <input type="text" name="add_ville" id="add_ville">
                         <button type="button">Ajouter</button>
                     </fieldset>
                 </form>
                 <ul>
-                  
+                   
                 </ul>
             </article>
 

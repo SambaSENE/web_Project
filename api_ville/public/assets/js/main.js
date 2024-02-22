@@ -1,19 +1,20 @@
 import { ReposPays } from "./ReposPays.js";
+import { ReposVille } from "./ReposVille.js";
 
 const app = {
     data() {
         return {
             listPays: [],
-            listVille: [],
+            listVilles: [],
             ville: [],
             monPays: null
         }
     }, async mounted() {
         this.listPays = await ReposPays.getCoyntrys();
+        this.listVilles = await ReposVille.getVilles();
         
-        this.listVille = await ReposPays.getVille();
-        this.ville = await ReposPays.getVille(1);
-        console.log(this.ville);
+      
+        
     }, methods: {
         openDetails(event) {
             let idPays = event.target.dataset.id;
