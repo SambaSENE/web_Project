@@ -1,0 +1,143 @@
+:root {
+    --main-color : #000;
+    --font-color1: #fff;
+    --font-color2: #F6FA10;
+    --bg_color : #006500;
+    --close_btn :#8C0E00;
+}
+body {
+    width: 100vw;
+    background: var(--main-color);
+    color: var(--font-color1);
+}
+header {
+    width: 100%;
+    
+}
+main {
+    width: 100vw;
+    padding: 20px;
+}
+
+table {
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid  var(--bg_color);
+    background-color: #dfe4ea20;
+}
+table thead  {
+    background-color: var(--bg_color);
+    /* line-height: 40px; */
+}
+table thead tr th {
+    padding: 15px;
+}
+table tbody tr{
+    padding: 5px 20px;
+}
+table tbody tr:hover{
+    
+}
+table tbody tr td {
+    border: 1px solid var(--bg_color);
+    padding: 10px 20px;
+}
+table tbody tr td button {
+    border: 2px solid var(--bg_color);
+    color: var(--bg_color);
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    margin-left: 30px;
+}
+table tbody tr td button:hover {
+    background-color: var(--bg_color);
+    color: var(--font-color1);
+}
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #00b89359;
+    margin: auto;
+    padding: 1rem;
+    width: 100vw;
+    text-align: center;
+}
+
+#modal article {
+    background-color: var(--font-color1);
+    width: 550px;
+    padding: 5px;
+    margin: 325px auto;
+    background-color: #006500;
+}
+#modal .btn {
+    width: 100%;
+    background-color: var(--close_btn);
+    color: var(--font-color1);
+    border: none;
+}
+#modal .btn:hover{
+    background-color: var(--font-color1);
+    color: var(--close_btn);
+}
+#modal article>article {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    color: var(--font-color2);
+    display: flex;
+    justify-content: space-around;
+}
+#modal article>article h2 {
+    line-height: 50px;
+}
+#modal article>article p{
+    line-height: 50px;
+
+}
+
+.codePays {
+    font-weight: bold;
+}
+#modal form {
+    
+}
+#modal form label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: 700;
+    padding: 10px;
+    color: var(--font-color2);
+
+}
+
+#modal form input {
+    border-style: none;
+    border: 1px solid var(--font-color1);
+    background-color: var(--bg_color);
+    padding: 0 10px;
+    color: var(--font-color2);
+    height: 40px;
+}
+
+#modal form button {
+    width: 100px;
+    height: 40px;
+    background-color: var(--bg_color);
+    border: 1px solid var(--bs-body-bg);
+    color: var(--bs-body-bg);
+}
+#modal form button:hover {
+    background-color: var(--close_btn);
+    color: var(--font-color1);
+    border: 1px solid var(--close_btn);
+    
+}
+#modal ul {
+    margin: 5px;
+}
